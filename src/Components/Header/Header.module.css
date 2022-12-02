@@ -1,0 +1,104 @@
+.header {
+    position: fixed;
+    width: 100%;
+    background: lightskyblue;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 10px;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu,
+.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: #000;
+    margin-right: 10px;
+}
+
+.menu a:last-child,
+.menu li:last-child {
+    margin-right: 0;
+}
+
+@keyframes close {
+    from {
+        height: 85px;
+        overflow: auto;
+    }
+    to {
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+@keyframes open {
+    from {
+        height: 0;
+        border-bottom: none;
+        overflow: hidden;
+    }
+    to {
+        height: 85px;
+        border-bottom: 1px solid #000000;
+        overflow: auto;
+    }
+}
+
+.menu .submenu {
+    height: 0;
+    background: lightskyblue;
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid #000000;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.menu .submenu {
+    animation: 0.5s close forwards;
+}
+
+.menu li:hover .submenu {
+    animation: 0.5s open forwards;
+}
+
+.menu .submenu li {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.menu .submenu li a {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
